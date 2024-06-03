@@ -257,7 +257,7 @@ def generate_graph(
 
     graphviz.graph_attr.update()
     graphviz.node_attr.update(fontsize=40, fontfamily="FreeMono", fontweight="bold")
-    graphviz.edge_attr.update()
+    graphviz.edge_attr.update(dir="back")
     click.echo(f"Writing graph to {out.name}")
     graphviz.draw(out, prog="dot")
 

@@ -12,14 +12,15 @@ class Env(pydantic.BaseModel):
 
     class Path(pydantic.BaseModel):
         data: pathlib.Path = pathlib.Path(envf.str("DATA_PATH"))
+        output: pathlib.Path = pathlib.Path(envf.str("OUTPUT_PATH"))
         papers: pathlib.Path = data / "papers.json"
         translations: pathlib.Path = data / "translations.json"
         cache_folder: pathlib.Path = data
         references: pathlib.Path = data / "references.json"
         clusters: pathlib.Path = data / "clusters.json"
-        clusters_html: pathlib.Path = data / "clusters.html"
+        clusters_html: pathlib.Path = output / "clusters.html"
         threat_scores: pathlib.Path = data / "threat_scores.json"
-        graph: pathlib.Path = data / "graph.png"
+        graph: pathlib.Path = output / "graph.png"
 
     path: Path = Path()
 
