@@ -1,2 +1,2 @@
-# biblio
-Biblio
+# How to install
+- graphviz
